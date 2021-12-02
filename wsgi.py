@@ -1,6 +1,9 @@
 from app.courriel import envoyer_nouvelles_installations
 from app.__init__py import *
 from apscheduler.schedulers.background import BackgroundScheduler
+from catalog import getApp
+
+app = getApp()
 
 def maj_donnees():
     with app.app_context():
