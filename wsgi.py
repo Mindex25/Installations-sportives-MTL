@@ -1,7 +1,6 @@
 from app.courriel import envoyer_nouvelles_installations
-from app.__init__py import *
+from app.app import *
 from apscheduler.schedulers.background import BackgroundScheduler
-from catalog import getApp
 
 app = getApp()
 
