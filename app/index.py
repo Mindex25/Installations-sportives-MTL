@@ -1,10 +1,11 @@
-from flask_bcrypt import Bcrypt
 
 from flask import Flask
 from flask import jsonify
 from flask import redirect
 from flask import render_template
 from flask import request
+from flask_bcrypt import Bcrypt
+
 from flask_json_schema import JsonSchema
 from .donnees import *
 from .glissade import *
