@@ -1,4 +1,4 @@
-from app.app import *
+from app.__init__ import *
 from app.courriel import envoyer_nouvelles_installations
 from apscheduler.schedulers.background import BackgroundScheduler
 import os

@@ -17,7 +17,6 @@ schema = JsonSchema(app)
 app.config['SECRET_KEY'] = "87e7812695e54ee4e18c0904fd183ad8"
 bcrypt = Bcrypt(app)
 
-
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
@@ -138,3 +137,7 @@ def creer_utilisateur():
         data["nom"], data["courriel"], mdp_hashed, data["liste_arr"])
     utilisateur = get_db().inserer_utilisateur(utilisateur)
     return jsonify(utilisateur.min_info()), 201
+
+
+def getApp():
+    return app
