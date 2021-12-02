@@ -1,0 +1,48 @@
+{% extends "default.html" %}
+
+{% block titre %}Inscription{% endblock %}
+
+{% block content %}
+<br><br><br><br><br><br>
+<div class="col-md-4 col-md-offset-4">
+  <form id="inscription" method='POST' action="/inscription">
+    <div class="form-group row">
+      <label for="champ-nom" class="col-sm-3 col-form-label">Nom complet</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="champ-nom" name="nom" value="" placeholder="Nom">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="champ-courriel" class="col-sm-3 col-form-label">Courriel</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control" id="champ-courriel" value="" placeholder="courriel@uqam.ca">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="champ-mdp" class="col-sm-3 col-form-label">Mot de passe</label>
+      <div class="col-sm-6">
+        <input type="password" class="form-control" id="champ-mdp" value="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="form-liste_arr" class="col-sm-3 col-form-label">Arrondissements surveillés</label>
+      <div class="col-sm-6">
+        <select id="form-liste_arr" name="liste_arr" class="form-control" multiple>
+          {% for arr in arrondissements %}
+          <option value="{{ arr[0] }}">{{ arr[0] }}
+            {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">S'inscrire</button>
+      </div>
+    </div>
+    <div id="msg-erreur" class=" p row-md-12"></div>
+    <div id="msg-retour" class=" p row-md-12"></div>
+  </form>
+</div>
+<script src="{{ url_for('static', filename = 'js/inscription.js') }}"></script>
+
+{% endblock %}

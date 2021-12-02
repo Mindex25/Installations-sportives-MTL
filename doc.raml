@@ -1,0 +1,69 @@
+#%RAML 1.0
+title: Documentation pour les services REST 
+mediaType: application/json
+
+
+/api:
+  /installations:
+    get:
+      queryParameters:
+        arrondissement:
+          description: Nom de l'arrondissement
+          type: string
+          required: true
+      responses:
+        201:
+          body:
+            application/json:
+              example: |
+                [
+                  {
+                    "nom": "Glissade, Parc Arthur-Therrien"
+                  },
+                ]
+        404:
+          body:
+            application/json:
+              example: |
+                {"message_erreur:" "Aucun résultat pour cet arrondissement"}
+  /info:
+      get:
+      queryParameters:
+        arrondissement:
+          description: Nom de l'arrondissement
+          type: string
+          required: true
+      responses:
+        201:
+          body:
+            application/json:
+              example: |
+                [
+                  {
+                    "nom": "Glissade, Parc Arthur-Therrien"
+                  },
+                ]
+  /utilisateur:
+      post:
+        description: Offre une interface pour l'inscription d'un utilisateur
+        body:
+          application/json:
+            example: |
+              {
+                'nom': "Foo Bar",
+                'courriel': "foobar@gmail.com",
+                'mdp': "motdepassetressecret",
+                'liste_arr': ["Verdun", "Parc-Extension"]
+              }
+        responses:
+          201:
+            description: L'utilisateur est inscrit dans la base de données
+            body:
+              application/json:
+                example: |
+                  {
+                    'nom': "Foo Bar",
+                    'courriel': "foobar@gmail.com",
+                    'mdp': "motdepassetressecret",
+                    'liste_arr': ["Verdun", "Parc-Extension"]
+                  }
