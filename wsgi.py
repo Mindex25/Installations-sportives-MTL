@@ -3,7 +3,6 @@ from app.app import *
 from apscheduler.schedulers.background import BackgroundScheduler
 import os
 
-app = getApp()
 
 def maj_donnees():
     with app.app_context():
@@ -25,6 +24,6 @@ scheduler.start()
 if __name__ == "__main__":
     # Pour la correction
     # maj_donnees()
-    port = int(os.getenv('PORT'))
-    app.run(host='0.0.0.0', port=port)
+    port = os.environ.get("PORT", 5000)
+    app.run(debug=False, host="0.0.0.0", port=port)
     app.run()

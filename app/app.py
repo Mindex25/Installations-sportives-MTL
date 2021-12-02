@@ -18,9 +18,6 @@ app.config['SECRET_KEY'] = "87e7812695e54ee4e18c0904fd183ad8"
 bcrypt = Bcrypt(app)
 
 
-def getApp():
-    return app
-
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
