@@ -1,6 +1,7 @@
 from app.courriel import envoyer_nouvelles_installations
 from app.app import *
 from apscheduler.schedulers.background import BackgroundScheduler
+import os
 
 app = getApp()
 
@@ -24,4 +25,6 @@ scheduler.start()
 if __name__ == "__main__":
     # Pour la correction
     # maj_donnees()
+    port = int(os.getenv('PORT'))
+    app.run(host='0.0.0.0', port=port)
     app.run()
