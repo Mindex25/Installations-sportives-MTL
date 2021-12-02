@@ -1,5 +1,5 @@
-from app.courriel import envoyer_nouvelles_installations
-from app.app import *
+from courriel import envoyer_nouvelles_installations
+from app import *
 from apscheduler.schedulers.background import BackgroundScheduler
 import os
 
