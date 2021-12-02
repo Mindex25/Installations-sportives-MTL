@@ -1,15 +1,17 @@
-from flask import Flask
-from flask import jsonify
-from flask import redirect
-from flask import render_template
-from flask import request
-from flask_bcrypt import Bcrypt
-from flask_json_schema import JsonSchema
 from .donnees import *
 from .glissade import *
 from .patinoire import *
 from .piscine import *
 from .utilisateur import *
+from flask_bcrypt import Bcrypt
+
+from flask import Flask
+from flask import jsonify
+from flask import redirect
+from flask import render_template
+from flask import request
+from flask_json_schema import JsonSchema
+
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -138,6 +140,3 @@ def creer_utilisateur():
     utilisateur = get_db().inserer_utilisateur(utilisateur)
     return jsonify(utilisateur.min_info()), 201
 
-
-def getApp():
-    return app
