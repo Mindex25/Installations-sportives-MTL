@@ -42,3 +42,4 @@ Vous pouvez entrer vos informations et confirmer votre inscription en consultant
 
 ## F1 Heroku
 Le site est déployé sur la plateforme infonuagique Heroku à l'adresse suivante: 
+https://installations-mtl.herokuapp.com/

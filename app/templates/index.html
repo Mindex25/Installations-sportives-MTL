@@ -9,11 +9,11 @@
     <p>Bienvenue sur le site d'installations Montréal. Vous trouverez ici les informations concernant les installations
         sportives et ludiques de la ville de Montréal. Les données proviennent du jeu de donées de la Ville. Vous pouvez
         faire une recherche par nom d'arrondissement ou par nom d'installation.</p>
-<div id="msgErreur" class=" p row-md-12"></div>
+    <div id="msgErreur" class=" p row-md-12"></div>
     <h3> Recherche par arrondissement</h3>
     <form>
         <div class="form-group">
-            <div class="col-xs-6 col-md-3">
+            <div class="">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Arrondissement" id="arrondissement" />
                     <div class="input-group-btn">
@@ -25,37 +25,36 @@
             </div>
         </div>
     </form>
-</div>
-<br><br>
-<div>
-    <h3> Recherche par installation</h3>
-    <form>
-        <div class="form-group">
-            <div class="col-xs-6 col-md-3">
-                <div class="input-group">
-                    <select class="form-control" aria-label="Default select example" id="nomsInstallations"
-                        name="nomsInstallations">
-                        {% for nom in nomsInstallations %}
-                        <option value="{{nom}}">{{nom}}</option>
-                        {% endfor %}
-                    </select>
-                    <div class="input-group-btn">
-                        <button class="btn btn-primary" type="submit" id="recherche-installation" name="button"
-                            value="chercherInstallation">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
+    <br><br>
+    <div>
+        <h3> Recherche par installation</h3>
+        <form>
+            <div class="form-group">
+                <div class="">
+                    <div class="input-group">
+                        <select class="form-control" aria-label="Default select example" id="nomsInstallations"
+                            name="nomsInstallations">
+                            {% for nom in nomsInstallations %}
+                            <option value="{{nom}}">{{nom}}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" type="submit" id="recherche-installation" name="button"
+                                value="chercherInstallation">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-</div>
-<br><br><br>
-<div class="container d-flex text-left flex-column justify-content-center">
-    <table class="table" id="liste-installations"></table>
-</div>
-<div class="container d-flex text-left flex-column justify-content-center">
-    <table class="table" id="informations"></table>
-</div>
-<script src="{{ url_for('static', filename = 'js/recherche.js') }}"></script>
-{% endblock %}
+        </form>
+    </div>
+    <br><br><br>
+    <div class="container d-flex text-left flex-column justify-content-center">
+        <table class="table" id="liste-installations"></table>
+    </div>
+    <div class="container d-flex text-left flex-column justify-content-center">
+        <table class="table" id="informations"></table>
+    </div>
+    <script src="{{ url_for('static', filename = 'js/recherche.js') }}"></script>
+    {% endblock %}

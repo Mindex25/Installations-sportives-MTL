@@ -8,6 +8,7 @@ window.onload = () => {
             document.getElementById("msgErreur").style.color = "red";
         }
         else {
+            document.getElementById("msgErreur").innerText = "";
             (async () => {
                 const reponse = await fetch('/api/installations?arrondissement=' + arrondissement)
                 const contenu = await reponse.json();
@@ -71,11 +72,11 @@ window.onload = () => {
         let thead = table.createTHead();
         let row = thead.insertRow();
         let th = document.createElement("th");
-        let text = document.createTextNode("clef");
+        let text = document.createTextNode("Attribut");
         th.appendChild(text);
         row.appendChild(th);
         th = document.createElement("th");
-        text = document.createTextNode("valeur");
+        text = document.createTextNode("Valeur");
         th.appendChild(text);
         row.appendChild(th);
     }

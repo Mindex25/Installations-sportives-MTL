@@ -27,10 +27,10 @@ mediaType: application/json
               example: |
                 {"message_erreur:" "Aucun résultat pour cet arrondissement"}
   /info:
-      get:
+    get:
       queryParameters:
-        arrondissement:
-          description: Nom de l'arrondissement
+        nom:
+          description: Nom de l'installation
           type: string
           required: true
       responses:
